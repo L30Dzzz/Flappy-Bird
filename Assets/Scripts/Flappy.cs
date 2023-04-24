@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Flappy : MonoBehaviour
 {
     Rigidbody2D flappy;  
-    
     int score = 0;
+    public Text scoreUI;
     // Start is called before the first frame update
     void Start(){
         flappy = GetComponent<Rigidbody2D> ();
@@ -21,9 +22,16 @@ public class Flappy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D (Collider2D other)
+    void OnTriggerEnter2D (Collider2D other)
     {
+        if(other.gameObject.CompareTag("Points"))
+        {
         score++;
         Debug.Log(score);
+        scoreUI.text = score.ToString();
+        }
     } 
+
+       
+    
 }
