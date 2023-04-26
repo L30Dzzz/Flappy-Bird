@@ -18,7 +18,7 @@ public class Flappy : MonoBehaviour
     {
         //---Jumping---
         if(Input.GetKeyDown(KeyCode.Space)){
-            flappy.AddForce(new Vector2(0,1) * 200);
+            flappy.AddForce(new Vector2(0,1) * 350);
         }
     }
 
