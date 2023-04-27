@@ -5,9 +5,14 @@ using UnityEngine.UI;
 
 public class Flappy : MonoBehaviour
 {
+    private Rigidbody rb;
     Rigidbody2D flappy;  
     int score = 0;
     public Text scoreUI;
+    
+    //true or false for when flappy is alive
+    public bool isAlive;
+
     // Start is called before the first frame update
     void Start(){
         flappy = GetComponent<Rigidbody2D> ();
@@ -29,6 +34,11 @@ public class Flappy : MonoBehaviour
         score++;
         Debug.Log(score);
         scoreUI.text = score.ToString();
+        }
+        
+        void OnCollisionEnter2D(Collision2D other)
+        {
+            isAlive = false;
         }
     } 
 
