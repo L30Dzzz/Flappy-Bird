@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Flappy : MonoBehaviour
 {
-    private Rigidbody rb;
     Rigidbody2D flappy;  
     int score = 0;
     public Text scoreUI;
@@ -14,15 +13,19 @@ public class Flappy : MonoBehaviour
     public bool isAlive;
 
     // Start is called before the first frame update
-    void Start(){
-        flappy = GetComponent<Rigidbody2D> ();
+    void Start()
+    {
+        flappy = GetComponent<Rigidbody2D>();
+        //set alive to true
+        isAlive = true;
     }
 
     
     void Update()
     {
         //---Jumping---
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space) && isAlive)
+        {
             flappy.AddForce(new Vector2(0,1) * 350);
         }
     }
@@ -36,12 +39,12 @@ public class Flappy : MonoBehaviour
         scoreUI.text = score.ToString();
         }
         
-        void OnCollisionEnter2D(Collision2D other)
+        
+    } 
+
+       void OnCollisionEnter2D(Collision2D other)
         {
             isAlive = false;
         }
-    } 
-
-       
     
 }
