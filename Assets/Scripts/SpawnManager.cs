@@ -25,7 +25,6 @@ public class SpawnManager : MonoBehaviour
         {
              CancelInvoke();
         }
-    
     }
 
     void SpawnPipes()

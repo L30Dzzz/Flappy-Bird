@@ -26,7 +26,7 @@ public class Flappy : MonoBehaviour
         //---Jumping---
         if(Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
-            flappy.AddForce(new Vector2(0,1) * 350);
+            flappy.AddForce(new Vector2(0,1) * 400);
         }
     }
 
@@ -45,6 +45,8 @@ public class Flappy : MonoBehaviour
        void OnCollisionEnter2D(Collision2D other)
         {
             isAlive = false;
+
+            GameOverScreen GameOverScreenScript = GameObject.Find("GameOverScreen").GetComponent<GameOverScreen>();
         }
     
 }
