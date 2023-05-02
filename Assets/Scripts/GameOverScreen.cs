@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class GameOVerScreen : MonoBehaviour
 {
-    //public GameObject gameOver;
+    public GameObject gameOver;
     
     void Start()
     {
-        //gameOver
+        gameOver
     }
 
     // Update is called once per frame
