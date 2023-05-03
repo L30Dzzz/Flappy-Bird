@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using
+using UnityEngine.SceneManagement;
 
 public class Flappy : MonoBehaviour
 {
@@ -43,11 +43,12 @@ public class Flappy : MonoBehaviour
         
     } 
 
-       void OnCollisionEnter2D(Collision2D other)
+        private void OnCollisionEnter2D(Collision2D other)
         {
             isAlive = false;
 
-            GameOverScreen GameOverScreenScript = GameObject.Find("GameOverScreen").GetComponent<GameOverScreen>();
+            GameOverScreen gameOverScreenScript = GameObject.Find("GameOverScreen").GetComponent<GameOverScreen>();
+            gameOverScreenScript.DisplayGameOver();
         }
     
 }
